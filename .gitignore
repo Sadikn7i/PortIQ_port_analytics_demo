@@ -1,0 +1,21 @@
+# Data files - exclude from GitHub
+data/*.csv
+*.csv
+
+# Results/outputs
+results/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code settings
+.vscode/
+
+# Environment files (if you ever add real credentials)
+.env
+*.env
+
+# Jupyter checkpoints
+.ipynb_checkpoints/

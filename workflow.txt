@@ -1,0 +1,26 @@
+Workflow:
+1. Project Setup
+Created a structured project folder port_analytics_demo/ with subfolders data/, notebooks/, and results/visualizations/. Installed required Python libraries: pandas, numpy, matplotlib, seaborn, scikit-learn.
+
+2. Data Generation (data/generate_data.py)
+Generated 4 fictional but realistic datasets simulating 2 years of Djibouti port operations:
+
+731 days of daily container traffic (2023–2024)
+5,000 container records with origin, cargo type, customs status, and dwell times
+1,000 truck route records across 6 Djibouti locations
+5,000 container records with 250 injected anomalies (5%)
+
+3. Component 1 — Traffic Forecasting (analysis_traffic.py)
+Used a Random Forest model with time-series features (lag variables, rolling averages) to predict daily container arrivals. Achieved 94.9% accuracy and R²=0.870. Key finding: weekend traffic drops 32.6%.
+
+4. Component 2 — Dwell Time Prediction (analysis_dwell.py)
+Compared Linear Regression, Random Forest, and Gradient Boosting. Gradient Boosting performed best at 82.3% accuracy. Top predictor was Customs Status — Fast clearance averages 50.7 hours vs Delayed at 141.8 hours.
+
+5. Component 3 — Route Optimization (analysis_routes.py)
+Used KMeans clustering to classify 1,000 routes into Efficient, Moderate, and Inefficient groups. Found 10.4% of routes are inefficient, costing $89 more per trip than efficient routes. High traffic increases travel time by 85%.
+
+6. Component 4 — Anomaly Detection (analysis_anomaly.py)
+Used Isolation Forest unsupervised ML to scan all 5,000 containers and flag suspicious ones. Generated a 0–100 risk score for each container and produced a prioritized alert list for port operations teams.
+
+Tech Stack: Python, pandas, numpy, scikit-learn, matplotlib, seaborn
+ML Techniques Used: Random Forest, Gradient Boosting, Linear Regression, KMeans Clustering, Isolation Forest, PCA
