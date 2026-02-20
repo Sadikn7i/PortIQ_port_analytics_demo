@@ -1,4 +1,4 @@
-# GHIH Smart Port Analytics Demo
+# Smart Port Analytics Demo
 ### Machine Learning for Port Operations Optimization — Djibouti
 
 ---
